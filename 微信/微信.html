@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			#container {
+				height: 100%;
+				width: 100%;
+				position: fixed;
+				display: flex;
+				flex-flow: column;
+				justify-content: space-between;
+				font-family: "微软雅黑";
+			}
+			
+			#top1 {
+				height: 40px;
+				/*border: 1px solid black;*/
+				display: flex;
+				justify-content: space-between;
+				background-color: #212121;
+			}
+			
+			#top11 {
+				height: 40px;
+				width: 33%;
+				/*border: 1px solid salmon;*/
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-start;
+				align-items: center;
+			}
+			
+			#top12 {
+				height: 40px;
+				width: 34%;
+				/*background-color: #008B8B;*/
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: center;
+				align-items: center;
+				font-weight: 300px;
+				color: white;
+			}
+			
+			#top13 {
+				height: 40px;
+				width: 33%;
+				/*				background-color: darkgoldenrod;*/
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-end;
+				align-items: center;
+				color: white;
+			}
+			
+			.dian {
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				border: 1px solid white;
+				margin: 1px;
+				background-color: white;
+			}
+			
+			.dian2 {
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				border: 1px solid white;
+				margin: 1px;
+			}
+			
+			.dian3 {
+				color: white;
+				font-weight: 300px;
+			}
+			
+			#dian13 {
+				width: 30px;
+				height: 11px;
+				border: 1px solid white;
+				margin: 5px;
+			}
+			
+			#dian131 {
+				width: 27px;
+				height: 11px;
+				background-color: #F9A825;
+				margin-right: 4px;
+			}
+			
+			#dian132 {
+				height: 7px;
+				width: 2px;
+				background-color: white;
+				position: relative;
+				right: -30px;
+				top: -9px;
+			}
+			
+			#top2 {
+				height: 40px;
+				width: 100%;
+				min-height: 30px;
+				display: flex;
+				text-align: center;
+				flex-flow: row nowrap;
+				justify-content: space-between;
+				background-color: #212121;
+				position: absolute;
+				top: 40px;
+				opacity: 0.9;
+			}
+			
+			#top21 {
+				height: 40px;
+				width: 33%;
+				/*border: 1px solid salmon;*/
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-start;
+				align-items: center;
+				color: white;
+			}
+			
+			#top22 {
+				height: 40px;
+				width: 34%;
+				/*background-color: #008B8B;*/
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: center;
+				align-items: center;
+				font-weight: 300px;
+				color: white;
+			}
+			
+			#top23 {
+				height: 40px;
+				width: 33%;
+		        font-size: larger;
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-end;
+				align-items: center;
+				color: #E0E0E0;
+			}
+			
+			#mid {
+				display: flex;
+				flex-grow: 1;
+				overflow-y: scroll;
+				flex-flow: column;
+			}
+			
+			#mid1 {
+				width: 100%;
+				height: 26px;
+				box-shadow: 0px 0px 10px gainsboro inset;
+				border: 1px solid gainsboro;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+				position: absolute;
+				top: 80px;
+			}
+			
+			#mid11 {
+				width: 99%;
+				background: url(img/icon/control/搜索.svg);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+				height: 100%;
+			}
+			
+			.mid2 {
+				height: 56px;
+				border-bottom: 1px solid #E0E0E0;
+				width: 100%;
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: space-between;
+				position: absolute;
+				top: 110px;
+			}
+			
+			#mid211 {
+				background: url(img/photo/三胖-01.jpg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				border-radius: 5px;
+				width: 52px;
+				height: 52px;
+				align-items: center;
+				margin: 0px 0px 0px 3px;
+			}
+			
+			#mid212 {
+				display: flex;
+				flex-flow: column;
+				justify-content: space-around;
+				position: absolute;
+				left: 55px;
+			}
+			
+			#mid212 h3 {
+				font-size: 16px;
+				color: #424242;
+				line-height: 30px;
+			}
+			
+			#mid212 p {
+				color: #9e9e9e;
+				font-size: 14px;
+			}
+			
+			#mid213 {
+				font-size: 10px;
+				color: #9E9E9E;
+			}
+			
+			#mid22 {
+				position: absolute;
+				top: 175px;
+			}
+			
+			#mid221 {
+				background: url(img/photo/neusoft.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				border-radius: 5px;
+				width: 52px;
+				height: 52px;
+				align-items: center;
+				margin: 0px 0px 0px 3px;
+			}
+			
+			#mid222 {
+				display: flex;
+				flex-flow: column;
+				justify-content: space-around;
+				position: absolute;
+				left: 55px;
+			}
+			
+			#mid222 h3 {
+				font-size: 16px;
+				color: #424242;
+				line-height: 30px;
+			}
+			
+			#mid222 p {
+				color: #9e9e9e;
+				font-size: 14px;
+			}
+			
+			#mid223 {
+				font-size: 10px;
+				color: #9E9E9E;
+			}
+			
+			#mid23 {
+				position: absolute;
+				top: 240px;
+			}
+			
+			#mid231 {
+				background: url(img/photo/wuhong.jpg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				border-radius: 5px;
+				width: 52px;
+				height: 52px;
+				align-items: center;
+				margin: 0px 0px 0px 3px;
+			}
+			
+			#mid232 {
+				display: flex;
+				flex-flow: column;
+				justify-content: space-around;
+				position: absolute;
+				left: 55px;
+			}
+			
+			#mid232 h3 {
+				font-size: 16px;
+				color: #424242;
+				line-height: 30px;
+			}
+			
+			#mid232 p {
+				color: #9e9e9e;
+				font-size: 14px;
+			}
+			
+			#mid233 {
+				font-size: 10px;
+				color: #9E9E9E;
+			}
+			
+			#mid24 {
+				position: absolute;
+				top: 305px;
+			}
+			
+			#mid241 {
+				background: url(img/photo/女孩-01.jpeg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				border-radius: 5px;
+				width: 52px;
+				height: 52px;
+				align-items: center;
+				margin: 0px 0px 0px 3px;
+			}
+			
+			#mid242 {
+				display: flex;
+				flex-flow: column;
+				justify-content: space-around;
+				position: absolute;
+				left: 55px;
+			}
+			
+			#mid242 h3 {
+				font-size: 16px;
+				color: #424242;
+				line-height: 30px;
+			}
+			
+			#mid242 p {
+				color: #bf360c;
+				font-size: 14px;
+			}
+			
+			#mid243 {
+				font-size: 10px;
+				color: #9E9E9E;
+			}
+			
+			#mid25 {
+				position: absolute;
+				top: 370px;
+			}
+			
+			#mid251 {
+				background: url(img/photo/川普-01.jpg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				border-radius: 5px;
+				width: 52px;
+				height: 52px;
+				align-items: center;
+				margin: 0px 0px 0px 3px;
+			}
+			
+			#mid252 {
+				display: flex;
+				flex-flow: column;
+				justify-content: space-around;
+				position: absolute;
+				left: 55px;
+			}
+			
+			#mid252 h3 {
+				font-size: 16px;
+				color: #424242;
+				line-height: 30px;
+			}
+			
+			#mid252 p {
+				color: #9e9e9e;
+				font-size: 14px;
+			}
+			
+			#mid253 {
+				font-size: 10px;
+				color: #9E9E9E;
+			}
+			
+			#mid26 {
+				position: absolute;
+				top: 435px;
+			}
+			
+			#mid261 {
+				background: url(img/photo/马化腾.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				border-radius: 5px;
+				width: 52px;
+				height: 52px;
+				align-items: center;
+				margin: 0px 0px 0px 3px;
+			}
+			
+			#mid262 {
+				display: flex;
+				flex-flow: column;
+				justify-content: space-around;
+				position: absolute;
+				left: 55px;
+			}
+			
+			#mid262 h3 {
+				font-size: 16px;
+				color: #424242;
+				line-height: 30px;
+			}
+			
+			#mid262 p {
+				color: #9e9e9e;
+				font-size: 14px;
+			}
+			
+			#mid263 {
+				font-size: 10px;
+				color: #9E9E9E;
+			}
+			
+			#mid27 {
+				position: absolute;
+				top: 500px;
+			}
+			
+			#mid271 {
+				background: url(img/photo/汉堡.jpg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				border-radius: 5px;
+				width: 52px;
+				height: 52px;
+				align-items: center;
+				margin: 0px 0px 0px 3px;
+			}
+			
+			#mid272 {
+				display: flex;
+				flex-flow: column;
+				justify-content: space-around;
+				position: absolute;
+				left: 55px;
+			}
+			
+			#mid272 h3 {
+				font-size: 16px;
+				color: #424242;
+				line-height: 30px;
+			}
+			
+			#mid272 p {
+				color: #9e9e9e;
+				font-size: 14px;
+			}
+			
+			#mid273 {
+				font-size: 10px;
+				color: #9E9E9E;
+			}
+			
+			#menu {
+				height: 50px;
+				width: 100%;
+				border: 1px solid #FFC107;
+				position: absolute;
+				bottom: 0px;
+				display: flex;
+				flex-flow: row nowrap;
+				opacity: 0.7;
+			}
+			
+			#menu1 {
+				background: url(img/icon/menu/聊天-press.svg);
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: flex;
+				flex-flow: column nowrap;
+				align-items: center;
+				justify-content: flex-end;
+				width: 25%;
+				height: 50px;
+			}
+			
+			#menu1 button {
+				margin-top: 30px;
+				opacity: 0.9;
+			}
+			
+			#menu2 {
+				background: url(img/icon/menu/通讯录.svg);
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: flex;
+				flex-flow: column nowrap;
+				align-items: center;
+				justify-content: flex-end;
+				width: 25%;
+				height: 50px;
+				opacity: .8;
+			}
+			
+			#menu2 button {
+				margin-top: 30px;
+				opacity: 0.7;
+			}
+			
+			#menu3 {
+				background: url(img/icon/menu/发现.svg);
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: flex;
+				flex-flow: column nowrap;
+				align-items: center;
+				justify-content: flex-end;
+				width: 25%;
+				height: 50px;
+				opacity: .8;
+			}
+			
+			#menu3 button {
+				margin-top: 30px;
+				opacity: 0.7;
+			}
+			
+			#menu4 {
+				background: url(img/icon/menu/me.svg);
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: flex;
+				flex-flow: column nowrap;
+				align-items: center;
+				justify-content: flex-end;
+				width: 25%;
+				height: 50px;
+				opacity: .8;
+			}
+			
+			#menu4 button {
+				margin-top: 30px;
+				opacity: 0.7;
+			}
+			
+			#tongxun{
+				width: 100%;
+				height: 200px;
+				position: absolute;
+				top: 100px;
+			}
+			#tongxun1{
+				width: 100%;
+				height: 50px;
+				background-color: #EEEEEE;
+				border-bottom: 1px solid #E0E0E0;
+			}
+			#tongxun11{
+				width: 50px;height: 50px;
+		        background: url(img/icon/dicovery/附近的人.svg);
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+			#tongxun21{
+				width: 50px;height: 50px;
+		        background: url(img/icon/menu/me-press.svg);
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			#tongxun31{
+				width: 50px;height: 50px;
+		        background: url(img/icon/dicovery/附近的人.svg);
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+			#tongxun41{
+				width: 50px;height: 50px;
+		        background: url(img/icon/dicovery/附近的人.svg);
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+			#tongxun2{
+				width: 100%;
+				height: 50px;
+				background-color: #EEEEEE;
+				border-bottom: 1px solid #E0E0E0;
+			}
+			#tongxun3{
+				width: 100%;
+				height: 50px;
+				background-color: #EEEEEE;
+				border-bottom: 1px solid #E0E0E0;
+			}
+			#tongxun4{
+				width: 100%;
+				height: 50px;
+				background-color: #EEEEEE;
+				border-bottom: 1px solid #E0E0E0;
+			}
+			#tongxun1 p{
+				text-indent: 60px;
+				line-height: 20px;
+				position: absolute;
+				top: 20px;
+			}
+			#tongxun2 p{
+				text-indent: 60px;
+				line-height: 20px;
+				position: absolute;
+				top: 70px;
+			}
+			#tongxun3 p{
+				text-indent: 60px;
+				line-height: 20px;
+				position: absolute;
+				top: 120px;
+			}
+			#tongxun4 p{
+				text-indent: 60px;
+				line-height: 20px;
+				position: absolute;
+				top: 170px;
+			}
+			
+			#pengyouquan{
+				width: 100%;
+				height: 40px;
+				position: absolute;
+				top: 100px;
+				background: url(img/icon/dicovery/朋友圈.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-color: #EEEEEE;
+			}
+			
+			#pengyouquan p{
+				line-height: 40px;
+				text-indent: 60px;
+			}
+			
+			.jiantou{
+				width: 20px;height: 20px;
+				background: url(img/icon/material/右箭头.svg);
+			    background-position: center;
+                background-size: contain;
+                transform: scale(.5);
+                position: absolute;
+                right: 20px;
+                top: 12px;
+			}
+			
+			#faxian1{
+				width: 100%;
+				height: 90px;
+				position: absolute;
+				top: 160px;
+			}
+			#faxian11{
+				height: 40px;
+				width: 100%;
+				background: url(img/icon/dicovery/扫一扫.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-color: #EEEEEE;
+			}
+			#faxian11 p{
+				line-height: 40px;
+				text-indent: 60px;
+			}
+			#faxian12{
+				height: 40px;
+				width: 100%;
+				position: absolute;
+				top: 50px;
+				background: url(img/icon/dicovery/摇一摇.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-color: #EEEEEE;
+			}
+			#faxian12 p{
+				line-height: 40px;
+				text-indent: 60px;
+			}
+			
+			#faxian2{
+				width: 100%;
+				height: 90px;
+				position: absolute;
+				top: 270px;
+			}
+			#faxian21{
+				height: 40px;
+				width: 100%;
+				background: url(img/icon/dicovery/附近的人.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-color: #EEEEEE;
+			}
+			#faxian21 p{
+				line-height: 40px;
+				text-indent: 60px;
+			}
+			#faxian22{
+				border-top: 1px solid #E0E0E0;
+				height: 40px;
+				width: 100%;
+				background: url(img/icon/dicovery/漂流瓶.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-color: #EEEEEE;
+			}
+			#faxian22 p{
+				line-height: 40px;
+				text-indent: 60px;
+			}
+			#faxian3{
+				width: 100%;
+				height: 90px;
+				position: absolute;
+				top: 370px;
+			}
+			#faxian31{
+				height: 40px;
+				width: 100%;
+				background: url(img/icon/dicovery/购物.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-color: #EEEEEE;
+			}
+			#faxian31 p{
+				line-height: 40px;
+				text-indent: 60px;
+			}
+			#faxian32{
+				border-top: 1px solid #E0E0E0;
+				height: 40px;
+				width: 100%;
+				background: url(img/icon/dicovery/游戏.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-color: #EEEEEE;
+			}
+			#faxian32 p{
+				line-height: 40px;
+				text-indent: 60px;
+			}
+			
+			#wo1{
+				width: 100%;
+				height: 80px;
+				position: absolute;
+				top: 100px;
+				background: url(img/photo/奥巴马-01.jpg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-color: #EEEEEE;
+			}
+			
+			#wo11 p{
+				line-height: 40px;
+				text-indent: 100px;
+			}
+			#wo11 h3{
+				line-height: 40px;
+				text-indent: 100px;
+			}
+			#wo2{
+				width: 100%;
+				height: 90px;
+				position: absolute;
+				top: 200px;
+			}
+			#wo21{
+				height: 40px;
+				width: 100%;
+				background: url(img/icon/dicovery/看一看.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-color: #EEEEEE;
+			}
+			#wo21 p{
+				line-height: 40px;
+				text-indent: 60px;
+			}
+			#wo22{
+				height: 40px;
+				width: 100%;
+				position: absolute;
+				top: 50px;
+				background: url(img/icon/dicovery/看一看.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-color: #EEEEEE;
+			}
+			#wo22 p{
+				line-height: 40px;
+				text-indent: 60px;
+			}
+			#screen{
+				width: 100%;height: 200px;
+				position: absolute;
+				top: 80px;
+				background: url(img/images/porsche-panamera-image.jpg);
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			#screen1{
+				width: 80px;height: 80px;
+				position: absolute;
+				top:150px;
+				right: 25px;
+				background: url(img/photo/奥巴马-01.jpg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				border: 1px solid black;
+			}
+			#moment11{
+				width: 100%;height: 400px;
+				position: absolute;
+				top:350px;
+				display: flex;
+				flex-flow: row nowrap; 
+			}
+			#moment111{
+				width: 70px;height: 70px;
+				background: url(img/photo/马化腾.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+			#moment112{
+				width: 75%;height: 200px;
+				position: absolute;
+				left: 80px;
+				top: 0px;
+			}
+			#moment112 h4{
+				font-weight: 700px;
+				color: #286090;
+				line-height: 30px;
+			}
+			#moment112 p{
+				font-weight: 400px;
+				color: #212121;
+				line-height: 30px;
+			}
+			#moment113{
+				display: flex;
+				flex-flow: row; 
+				height: 120px;
+				width: 180px;
+				position: absolute;
+				left: 80px;
+				background: url(img/photo/bsj.png);
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			#moment114{
+				width: 75%;height: 200px;
+				position: absolute;
+				left: 85px;
+				top: 100px;
+			}
+			#moment114 p1{
+				color: gray;
+				font-weight: 300;
+				font-size: 10px;
+			}
+			#moment114 p2{
+				font-size: 12px;
+				color: #286090;
+				font-weight: 700;
+			}
+			#moment114 p3{
+				color: #424242;
+				font-size: 12px;
+				font-weight: 500;
+			}
+			
+			#moment12{
+				width: 100%;height: 200px;
+				position: absolute;
+				top:520px;
+				display: flex;
+				flex-flow: row nowrap;
+				/*overflow: scroll;*/
+			}
+			/*::-webkit-scrollbar{
+				display: none;
+			}*/
+			#moment121{
+				width: 70px;height: 70px;
+				background: url(img/photo/马化腾.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+			#moment122{
+				width: 75%;height: 200px;
+				position: absolute;
+				left: 80px;
+				top: 0px;
+			}
+			#moment122 h4{
+				font-weight: 700px;
+				color: #286090;
+				line-height: 30px;
+			}
+			#moment122 p{
+				font-weight: 400px;
+				color: #212121;
+				line-height: 30px;
+			}
+			#moment123{
+				display: flex;
+				flex-flow: row; 
+				height: 120px;
+				width: 180px;
+				position: absolute;
+				left: 80px;
+				background: url(img/photo/女孩-02.jpeg);
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			#moment124{
+				width: 75%;height: 200px;
+				position: absolute;
+				left: 85px;
+				top: 100px;
+			}
+			#moment124 p1{
+				color: gray;
+				font-weight: 300;
+				font-size: 10px;
+			}
+			#moment124 p2{
+				font-size: 12px;
+				color: #286090;
+				font-weight: 700;
+			}
+			#moment124 p3{
+				color: #424242;
+				font-size: 12px;
+				font-weight: 500;
+			}
+			.s1{
+				overflow: scroll;
+			}
+			
+			
+			
+			
+			
+			
+			
+		</style>
+
+	</head>
+
+	<body>
+
+		<div id="container">
+
+			<div id="top1">
+				<div id="top11">
+					<div class="dian"></div>
+					<div class="dian"></div>
+					<div class="dian"></div>
+					<div class="dian"></div>
+					<div class="dian2"></div>
+					<div class="dian3">中国移动&nbsp;4G</div>
+				</div>
+				<div id="top12">
+					<div>10:00</div>
+				</div>
+				<div id="top13">
+					<div>88%</div>
+					<div id="dian13">
+						<div id="dian131"></div>
+						<div id="dian132"></div>
+					</div>
+					<div></div>
+				</div>
+			</div>
+			<div id="top2">
+				<div id="top21">
+					&nbsp;
+					<&nbsp;返回 </div>
+						<div id="top22">
+							微信
+						</div>
+						<div id="top23">+</div>
+				</div>
+			<div id="mid" style="display:none;">
+					<div id="mid1">
+						<input id="mid11" align="center" />
+					</div>
+					<div class="mid2" id="mid21">
+						<div id="mid211"></div>
+						<div id="mid212">
+							<h3>&nbsp;朝鲜元首金</h3>
+							<p>&nbsp;今天朝鲜我会制定一系列方案</p>
+						</div>
+						<div id="mid213">8:03</div>
+					</div>
+					<div class="mid2" id="mid22">
+						<div id="mid221"></div>
+						<div id="mid222">
+							<h3>&nbsp;东软JAVA全栈</h3>
+							<p>&nbsp;贾老师说我们要做个微信</p>
+						</div>
+						<div id="mid223">10:03</div>
+					</div>
+					<div class="mid2" id="mid23">
+						<div id="mid231"></div>
+						<div id="mid232">
+							<h3>&nbsp;武老师</h3>
+							<p>&nbsp;今晚喝酒吧</p>
+						</div>
+						<div id="mid233">18:03</div>
+					</div>
+					<div class="mid2" id="mid24">
+						<div id="mid241"></div>
+						<div id="mid242">
+							<h3>&nbsp;亲爱的</h3>
+							<p>&nbsp;[语音]</p>
+						</div>
+						<div id="mid243">20:03</div>
+					</div>
+					<div class="mid2" id="mid25">
+						<div id="mid251"></div>
+						<div id="mid252">
+							<h3>&nbsp;川普</h3>
+							<p>&nbsp;LOL号给我玩玩</p>
+						</div>
+						<div id="mid253">2017/7/29</div>
+					</div>
+					<div class="mid2" id="mid26">
+						<div id="mid261"></div>
+						<div id="mid262">
+							<h3>&nbsp;哥</h3>
+							<p>&nbsp;过两年腾讯就交给你了</p>
+						</div>
+						<div id="mid263">2017/7/29</div>
+					</div>
+					<div class="mid2" id="mid27">
+						<div id="mid271"></div>
+						<div id="mid272">
+							<h3>&nbsp;外卖</h3>
+							<p>&nbsp;中午给我来两个汉堡</p>
+						</div>
+						<div id="mid273">2017/7/28</div>
+					</div>
+
+				</div>
+			<div id="menu">
+					<div class="dibu" id="menu1">
+						<button type="button" data-target="#mid">微信</button>
+					</div>
+					<div class="dibu" id="menu2">
+						<button type="button" data-target="#tongxun">通讯录</button>
+					</div>
+					<div class="dibu" id="menu3">
+						<button type="button" data-target="#mid">发现</button>
+					</div>
+					<div class="dibu" id="menu4">
+						<button type="button" data-target="#mid">我</button>
+					</div>
+				</div>
+				
+			<div id="tongxun" style="display:none;">
+				<div>
+					<div id="tongxun1">
+						<div id="tongxun11"></div>
+						<p>新的朋友</p>
+					</div>
+					<div id="tongxun2">
+						<div id="tongxun21"></div>
+						<p>群聊</p>
+					</div>
+					<div id="tongxun3">
+						<div id="tongxun31"></div>
+						<p>标签</p>
+					</div>
+					<div id="tongxun4">
+						<div id="tongxun41"></div>
+						<p>公众号</p>
+					</div>
+				</div>
+			</div>
+			<div id="faxian" style="display: none;">
+				<div id="pengyouquan">
+					<p>朋友圈</p>
+					<div class="jiantou"></div>
+				</div>
+				<div id="faxian1">
+					<div id="faxian11">
+						<p>扫一扫</p>
+						<div class="jiantou"></div>
+					</div>
+					<div id="faxian12">
+						<p>摇一摇</p>
+						<div class="jiantou"></div>
+					</div>
+				</div>
+				<div id="faxian2">
+					<div id="faxian21">
+						<p>附近的人</p>
+						<div class="jiantou"></div>
+					</div>
+					<div id="faxian22">
+						<p>漂流瓶</p>
+					</div>
+				</div>
+				<div id="faxian3">
+					<div id="faxian31">
+						<p>购物</p>
+						<div class="jiantou"></div>
+					</div>
+					<div id="faxian32">
+						<p>游戏</p>
+					</div>
+				</div>
+				<div></div>
+			</div>
+			<div id="wo" style="display: none;">
+				<div id="wo1">
+					<div id="wo11">
+						<h3>Oh My God</h3>
+						<p>微信号：888888</p>
+					</div>
+				</div>
+				<div id="wo2">
+					<div id="wo21">
+						<p>我的世界</p>
+						<div class="jiantou"></div>
+					</div>
+					<div id="wo22">
+						<p>我的爱好</p>
+						<div class="jiantou"></div>
+					</div>
+				</div>
+				<div></div>
+			</div>
+            <div id="moment" style="display: none;">
+            	<div id="screen">
+            		<div id="screen1"></div>
+            	</div>
+            	<div id="moment1">
+            		<div id="moment11" class="s1">
+            			<div id="moment111"></div>
+            			<div id="moment112">
+            				<h4>哥</h4>
+            				<p>今天刚买的新车</p>
+            			</div>
+            			<div id="moment113"></div>
+            			<div id="moment114">
+            				<p1>1分钟前</p1><br />
+            				<p2>我</p2><p3>：哥，多少钱买的</p3><br />
+            				<p2>马云</p2><p3>：这车我好几辆</p3>
+            			</div>
+            		</div>
+            		<div id="moment12" class="s1">
+            			<div id="moment121"></div>
+            			<div id="moment122">
+            				<h4>哥</h4>
+            				<p>今天刚买的新车</p>
+            			</div>
+            			<div id="moment123"></div>
+            			<div id="moment124">
+            				<p1>1分钟前</p1><br />
+            				<p2>我</p2><p3>：哥，多少钱买的</p3><br />
+            				<p2>马云</p2><p3>：这车我好几辆</p3>
+            			</div>
+            		</div>
+            		<div id="moment13"></div>
+            	</div>
+            </div>
+            
+            
+		</div>
+
+	</body>
+
+</html>
